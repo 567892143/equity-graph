@@ -1,3 +1,9 @@
+using EquityGraph.Api.Features.Companies.GetBoardInterlocks;
+using EquityGraph.Api.Features.Companies.GetCompanyDetail;
+using EquityGraph.Api.Features.Companies.GetInstitutionalOverlap;
+using EquityGraph.Api.Features.Companies.GetShortestPath;
+using EquityGraph.Api.Features.Companies.GetSupplyChainExposure;
+using EquityGraph.Api.Features.Companies.ListCompanies;
 using EquityGraph.Api.Features.Health.CheckDbHealth;
 using EquityGraph.Api.Shared.CognoDb;
 
@@ -40,6 +46,14 @@ builder.Services.AddSingleton<CognoDbConnectionFactory>();
 // Register CypherReader (singleton: stateless and thread-safe)
 builder.Services.AddSingleton<ICypherReader, CypherReader>();
 
+// Register Feature Query Handlers (Scoped)
+builder.Services.AddScoped<ListCompaniesQueryHandler>();
+builder.Services.AddScoped<GetCompanyDetailQueryHandler>();
+builder.Services.AddScoped<GetBoardInterlocksQueryHandler>();
+builder.Services.AddScoped<GetInstitutionalOverlapQueryHandler>();
+builder.Services.AddScoped<GetSupplyChainExposureQueryHandler>();
+builder.Services.AddScoped<GetShortestPathQueryHandler>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,7 +65,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Map endpoints
+// Map Health Endpoints
 app.MapCheckDbHealthEndpoint();
+
+// Map Company Feature Endpoints
+app.MapListCompaniesEndpoint();
+app.MapGetCompanyDetailEndpoint();
+app.MapGetBoardInterlocksEndpoint();
+app.MapGetInstitutionalOverlapEndpoint();
+app.MapGetSupplyChainExposureEndpoint();
+app.MapGetShortestPathEndpoint();
 
 app.Run();
