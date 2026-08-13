@@ -14,6 +14,13 @@ DotNetEnv.Env.TraversePath().Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure port if PORT environment variable is set (Render/Railway inject PORT)
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrWhiteSpace(port))
+{
+    builder.WebHost.UseUrls($"http://+:{port}");
+}
+
 // Add Swagger/OpenAPI with API metadata
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
