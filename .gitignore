@@ -1,0 +1,17 @@
+﻿# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+.vs/
+
+# Angular / Node
+frontend/**/node_modules/
+frontend/**/dist/
+frontend/**/.angular/
+
+# Env
+.env
+*.env.local
+
+# OS
+.DS_Store
