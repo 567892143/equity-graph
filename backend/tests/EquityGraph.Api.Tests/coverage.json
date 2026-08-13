@@ -1,0 +1,2191 @@
+{
+  "EquityGraph.Api.dll": {
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "13": 0,
+            "15": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "54": 0,
+            "57": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "88": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "100": 0,
+            "103": 0,
+            "106": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "116": 0
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 289,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 289,
+              "EndOffset": 304,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 370,
+              "EndOffset": 372,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 370,
+              "EndOffset": 420,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 51,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 87,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 123,
+              "EndOffset": 125,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 123,
+              "EndOffset": 135,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 76,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 76,
+              "Offset": 14,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\Models\\Company.cs": {
+      "EquityGraph.Api.Shared.Models.Company": {
+        "System.String EquityGraph.Api.Shared.Models.Company::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.Models.Company::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.Models.Company::get_Ticker()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.Models.Company::get_Sector()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Shared.Models.Company::get_MarketCap()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.Models.Company::.ctor(System.String,System.String,System.String,System.String,System.Double)": {
+          "Lines": {
+            "4": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\Models\\Institution.cs": {
+      "EquityGraph.Api.Shared.Models.Institution": {
+        "System.String EquityGraph.Api.Shared.Models.Institution::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.Models.Institution::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.Models.Institution::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 0,
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\Models\\Person.cs": {
+      "EquityGraph.Api.Shared.Models.Person": {
+        "System.String EquityGraph.Api.Shared.Models.Person::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.Models.Person::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.Models.Person::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 0,
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\Middleware\\ExceptionHandlingMiddleware.cs": {
+      "EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware": {
+        "System.Void EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware::.ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware>)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware/<HandleExceptionAsync>d__4": {
+        "System.Void EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware/<HandleExceptionAsync>d__4::MoveNext()": {
+          "Lines": {
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "76": 0,
+            "77": 0
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 36,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware/<InvokeAsync>d__3": {
+        "System.Void EquityGraph.Api.Shared.Middleware.ExceptionHandlingMiddleware/<InvokeAsync>d__3::MoveNext()": {
+          "Lines": {
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0
+          },
+          "Branches": [
+            {
+              "Line": 55,
+              "Offset": 275,
+              "EndOffset": 301,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 275,
+              "EndOffset": 510,
+              "Path": 2,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 275,
+              "EndOffset": 719,
+              "Path": 3,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 275,
+              "EndOffset": 928,
+              "Path": 4,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 275,
+              "EndOffset": 1130,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\CognoDb\\CognoDbConnectionFactory.cs": {
+      "EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory": {
+        "Neo4j.Driver.IAsyncSession EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory::CreateSession()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory::Dispose()": {
+          "Lines": {
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory::.ctor(Microsoft.Extensions.Options.IOptions`1<EquityGraph.Api.Shared.CognoDb.CognoDbOptions>)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory::.ctor(EquityGraph.Api.Shared.CognoDb.CognoDbOptions)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory/<DisposeAsync>d__5": {
+        "System.Void EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory/<DisposeAsync>d__5::MoveNext()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\CognoDb\\CognoDbOptions.cs": {
+      "EquityGraph.Api.Shared.CognoDb.CognoDbOptions": {
+        "System.String EquityGraph.Api.Shared.CognoDb.CognoDbOptions::get_Uri()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.CognoDb.CognoDbOptions::get_Username()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Shared.CognoDb.CognoDbOptions::get_Password()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Shared\\CognoDb\\CypherReader.cs": {
+      "EquityGraph.Api.Shared.CognoDb.CypherReader": {
+        "System.Void EquityGraph.Api.Shared.CognoDb.CypherReader::.ctor(EquityGraph.Api.Shared.CognoDb.CognoDbConnectionFactory)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Shared.CognoDb.CypherReader/<ReadAsync>d__2`1": {
+        "System.Void EquityGraph.Api.Shared.CognoDb.CypherReader/<ReadAsync>d__2`1::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 388,
+              "EndOffset": 233,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 388,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Health\\CheckDbHealth\\CheckDbHealthEndpoint.cs": {
+      "EquityGraph.Api.Features.Health.CheckDbHealth.CheckDbHealthEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Health.CheckDbHealth.CheckDbHealthEndpoint::MapCheckDbHealthEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\ListCompanies\\ListCompaniesEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesEndpoint::MapListCompaniesEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\ListCompanies\\ListCompaniesQuery.cs": {
+      "EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQuery": {
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQuery::get_Search()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQuery::get_Sector()": {
+          "Lines": {
+            "6": 5
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQuery::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 2,
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\ListCompanies\\ListCompaniesQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler>)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.ListCompanies.ListCompaniesQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "41": 2,
+            "42": 2,
+            "43": 2,
+            "51": 2,
+            "53": 2,
+            "55": 2,
+            "56": 2
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 91,
+              "EndOffset": 93,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 35,
+              "Offset": 91,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 35,
+              "Offset": 123,
+              "EndOffset": 125,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 35,
+              "Offset": 123,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\ListCompanies\\ListCompaniesResponse.cs": {
+      "EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary": {
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::get_Name()": {
+          "Lines": {
+            "6": 1
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::get_Ticker()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::get_Sector()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::get_MarketCap()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.ListCompanies.CompanySummary::.ctor(System.String,System.String,System.String,System.String,System.Double)": {
+          "Lines": {
+            "4": 1,
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetSupplyChainExposure\\GetSupplyChainExposureEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureEndpoint::MapGetSupplyChainExposureEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetSupplyChainExposure\\GetSupplyChainExposureQuery.cs": {
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQuery": {
+        "System.String EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQuery::get_CompanyId()": {
+          "Lines": {
+            "5": 13
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQuery::get_MaxHops()": {
+          "Lines": {
+            "6": 22
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQuery::.ctor(System.String,System.Int32)": {
+          "Lines": {
+            "4": 7,
+            "7": 7
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetSupplyChainExposure\\GetSupplyChainExposureQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler>)": {
+          "Lines": {
+            "14": 7,
+            "15": 7,
+            "16": 7,
+            "17": 7,
+            "18": 7
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "65": 0
+          },
+          "Branches": []
+        },
+        "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler/<>c::<HandleAsync>b__3_1(System.Object)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 30,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 40,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 52,
+              "EndOffset": 54,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 52,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 73,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 84,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 97,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 14,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 132,
+              "EndOffset": 134,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 148,
+              "EndOffset": 150,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 148,
+              "EndOffset": 157,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 159,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 172,
+              "EndOffset": 174,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 172,
+              "EndOffset": 180,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 193,
+              "EndOffset": 195,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 193,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 204,
+              "EndOffset": 206,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 204,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 217,
+              "EndOffset": 219,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 217,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 132,
+              "EndOffset": 234,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.GetSupplyChainExposure.GetSupplyChainExposureQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 7,
+            "23": 7,
+            "25": 7,
+            "26": 4,
+            "27": 4,
+            "30": 3,
+            "31": 3,
+            "32": 3,
+            "33": 3,
+            "35": 3,
+            "36": 3,
+            "37": 3,
+            "38": 3,
+            "59": 3,
+            "63": 3,
+            "66": 3,
+            "68": 3,
+            "70": 3,
+            "71": 3
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 91,
+              "EndOffset": 93,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 5
+            },
+            {
+              "Line": 25,
+              "Offset": 91,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 25,
+              "Offset": 112,
+              "EndOffset": 114,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 25,
+              "Offset": 112,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetSupplyChainExposure\\GetSupplyChainExposureResponse.cs": {
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode": {
+        "System.String EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 6,
+            "7": 6
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath": {
+        "System.Collections.Generic.List`1<EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode> EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath::get_Nodes()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.Double> EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath::get_DependencyPercentages()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath::get_Hops()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetSupplyChainExposure.SupplyChainPath::.ctor(System.Collections.Generic.List`1<EquityGraph.Api.Features.Companies.GetSupplyChainExposure.ChainNode>,System.Collections.Generic.List`1<System.Double>,System.Int32)": {
+          "Lines": {
+            "10": 3,
+            "14": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetShortestPath\\GetShortestPathEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathEndpoint::MapGetShortestPathEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathEndpoint/<>c/<<MapGetShortestPathEndpoint>b__0_0>d": {
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathEndpoint/<>c/<<MapGetShortestPathEndpoint>b__0_0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 170,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetShortestPath\\GetShortestPathQuery.cs": {
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQuery": {
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQuery::get_FromCompanyId()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQuery::get_ToCompanyId()": {
+          "Lines": {
+            "6": 6
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQuery::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 2,
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetShortestPath\\GetShortestPathQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler>)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "68": 0,
+            "69": 0
+          },
+          "Branches": []
+        },
+        "EquityGraph.Api.Features.Companies.GetShortestPath.PathNode EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<>c::<HandleAsync>b__3_1(System.Object)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 45,
+              "Offset": 14,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 43,
+              "EndOffset": 45,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 43,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 55,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 76,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 87,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 100,
+              "EndOffset": 102,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 100,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 121,
+              "EndOffset": 123,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 121,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 132,
+              "EndOffset": 134,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 132,
+              "EndOffset": 137,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 145,
+              "EndOffset": 147,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 145,
+              "EndOffset": 153,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 14,
+              "EndOffset": 165,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 180,
+              "EndOffset": 185,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 199,
+              "EndOffset": 201,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 199,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 210,
+              "EndOffset": 212,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 210,
+              "EndOffset": 215,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 223,
+              "EndOffset": 225,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 223,
+              "EndOffset": 231,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 244,
+              "EndOffset": 246,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 244,
+              "EndOffset": 253,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 255,
+              "EndOffset": 257,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 255,
+              "EndOffset": 260,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 268,
+              "EndOffset": 270,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 268,
+              "EndOffset": 276,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 289,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 289,
+              "EndOffset": 298,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 300,
+              "EndOffset": 302,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 300,
+              "EndOffset": 305,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 313,
+              "EndOffset": 315,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 313,
+              "EndOffset": 321,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 180,
+              "EndOffset": 330,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<>c::<HandleAsync>b__3_2(System.Object)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 65,
+              "Offset": 1,
+              "EndOffset": 3,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 1,
+              "EndOffset": 6,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 13,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.GetShortestPathQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "63": 2,
+            "67": 2,
+            "70": 2,
+            "72": 2,
+            "73": 2,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "82": 2,
+            "83": 2
+          },
+          "Branches": [
+            {
+              "Line": 73,
+              "Offset": 297,
+              "EndOffset": 299,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 297,
+              "EndOffset": 359,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetShortestPath\\GetShortestPathResponse.cs": {
+      "EquityGraph.Api.Features.Companies.GetShortestPath.PathNode": {
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.PathNode::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.PathNode::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetShortestPath.PathNode::get_Label()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.PathNode::.ctor(System.String,System.String,System.String)": {
+          "Lines": {
+            "4": 3,
+            "8": 3
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse": {
+        "System.Collections.Generic.List`1<EquityGraph.Api.Features.Companies.GetShortestPath.PathNode> EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse::get_Nodes()": {
+          "Lines": {
+            "12": 1
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse::get_RelationshipTypes()": {
+          "Lines": {
+            "13": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse::get_Hops()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetShortestPath.ShortestPathResponse::.ctor(System.Collections.Generic.List`1<EquityGraph.Api.Features.Companies.GetShortestPath.PathNode>,System.Collections.Generic.List`1<System.String>,System.Int32)": {
+          "Lines": {
+            "11": 1,
+            "15": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetInstitutionalOverlap\\GetInstitutionalOverlapEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapEndpoint::MapGetInstitutionalOverlapEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetInstitutionalOverlap\\GetInstitutionalOverlapQuery.cs": {
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQuery": {
+        "System.String EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQuery::get_CompanyIdA()": {
+          "Lines": {
+            "5": 4
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQuery::get_CompanyIdB()": {
+          "Lines": {
+            "6": 4
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQuery::.ctor(System.String,System.String)": {
+          "Lines": {
+            "4": 2,
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetInstitutionalOverlap\\GetInstitutionalOverlapQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler>)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.GetInstitutionalOverlapQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "46": 2,
+            "48": 2,
+            "50": 2,
+            "51": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetInstitutionalOverlap\\GetInstitutionalOverlapResponse.cs": {
+      "EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry": {
+        "System.String EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry::get_InstitutionId()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry::get_InstitutionName()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry::get_StakeInCompanyA()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry::get_StakeInCompanyB()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetInstitutionalOverlap.InstitutionalOverlapEntry::.ctor(System.String,System.String,System.Double,System.Double)": {
+          "Lines": {
+            "4": 3,
+            "9": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetCompanyDetail\\GetCompanyDetailEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailEndpoint::MapGetCompanyDetailEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailEndpoint/<>c/<<MapGetCompanyDetailEndpoint>b__0_0>d": {
+        "System.Void EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailEndpoint/<>c/<<MapGetCompanyDetailEndpoint>b__0_0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 164,
+              "EndOffset": 201,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetCompanyDetail\\GetCompanyDetailQuery.cs": {
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQuery": {
+        "System.String EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQuery::get_CompanyId()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQuery::.ctor(System.String)": {
+          "Lines": {
+            "4": 2,
+            "6": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetCompanyDetail\\GetCompanyDetailQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler>)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.GetCompanyDetail.GetCompanyDetailQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "51": 2,
+            "53": 2,
+            "54": 2,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "63": 2,
+            "64": 2
+          },
+          "Branches": [
+            {
+              "Line": 54,
+              "Offset": 272,
+              "EndOffset": 274,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 272,
+              "EndOffset": 320,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetCompanyDetail\\GetCompanyDetailResponse.cs": {
+      "EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse": {
+        "System.String EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_Ticker()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_Sector()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_MarketCap()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_DirectorCount()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        },
+        "System.Double EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_MaxSupplyDependencyPct()": {
+          "Lines": {
+            "11": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::get_InstitutionCount()": {
+          "Lines": {
+            "12": 1
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetCompanyDetail.CompanyDetailResponse::.ctor(System.String,System.String,System.String,System.String,System.Double,System.Int32,System.Double,System.Int32)": {
+          "Lines": {
+            "4": 1,
+            "13": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetBoardInterlocks\\GetBoardInterlocksEndpoint.cs": {
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksEndpoint": {
+        "Microsoft.AspNetCore.Routing.IEndpointRouteBuilder EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksEndpoint::MapGetBoardInterlocksEndpoint(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetBoardInterlocks\\GetBoardInterlocksQuery.cs": {
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQuery": {
+        "System.String EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQuery::get_CompanyId()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQuery::.ctor(System.String)": {
+          "Lines": {
+            "4": 2,
+            "6": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetBoardInterlocks\\GetBoardInterlocksQueryHandler.cs": {
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler": {
+        "System.Void EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler::.ctor(EquityGraph.Api.Shared.CognoDb.ICypherReader,Microsoft.Extensions.Logging.ILogger`1<EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler>)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler/<>c": {
+        "EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler/<>c::<HandleAsync>b__3_0(Neo4j.Driver.IRecord)": {
+          "Lines": {
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": []
+        }
+      },
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler/<HandleAsync>d__3": {
+        "System.Void EquityGraph.Api.Features.Companies.GetBoardInterlocks.GetBoardInterlocksQueryHandler/<HandleAsync>d__3::MoveNext()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "44": 2,
+            "46": 2,
+            "48": 2,
+            "49": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\VELPULA DINESH\\wexa\\equity-graph\\backend\\Features\\Companies\\GetBoardInterlocks\\GetBoardInterlocksResponse.cs": {
+      "EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock": {
+        "System.String EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::get_PersonId()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::get_PersonName()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::get_Since()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::get_OtherCompanyId()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::get_OtherCompanyName()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Void EquityGraph.Api.Features.Companies.GetBoardInterlocks.BoardInterlock::.ctor(System.String,System.String,System.Int32,System.String,System.String)": {
+          "Lines": {
+            "4": 2,
+            "10": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

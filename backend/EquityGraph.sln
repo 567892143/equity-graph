@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C9C5CDBF-7D67-4EC9-A601-71D3EB16CA03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquityGraph.Api", "src\EquityGraph.Api\EquityGraph.Api.csproj", "{193753D0-4529-4113-A91D-7CC5D24A93A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{211A21DE-F659-4BA7-A209-7D3CF71889A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquityGraph.Api.Tests", "tests\EquityGraph.Api.Tests\EquityGraph.Api.Tests.csproj", "{3B842986-511D-4311-BE92-5C4FD15B8ECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{193753D0-4529-4113-A91D-7CC5D24A93A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193753D0-4529-4113-A91D-7CC5D24A93A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193753D0-4529-4113-A91D-7CC5D24A93A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193753D0-4529-4113-A91D-7CC5D24A93A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B842986-511D-4311-BE92-5C4FD15B8ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B842986-511D-4311-BE92-5C4FD15B8ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B842986-511D-4311-BE92-5C4FD15B8ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B842986-511D-4311-BE92-5C4FD15B8ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{193753D0-4529-4113-A91D-7CC5D24A93A7} = {C9C5CDBF-7D67-4EC9-A601-71D3EB16CA03}
+		{3B842986-511D-4311-BE92-5C4FD15B8ECC} = {211A21DE-F659-4BA7-A209-7D3CF71889A8}
+	EndGlobalSection
+EndGlobal
