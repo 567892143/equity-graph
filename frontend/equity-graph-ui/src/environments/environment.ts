@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiBaseUrl: 'http://localhost:5151/api'
+  production: true,
+  apiBaseUrl: 'https://equity-graph.onrender.com/api'
 };
