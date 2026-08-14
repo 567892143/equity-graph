@@ -26,7 +26,7 @@ public class GetCompanyDetailQueryHandler
             MATCH (c:Company {id: $companyId})
             OPTIONAL MATCH (p:Person)-[:DIRECTOR_OF]->(c)
             WITH c, count(DISTINCT p) AS directorCount
-            OPTIONAL MATCH (c)-[s:SUPPLIES_TO]->(:Company)
+            OPTIONAL MATCH (c)<-[s:SUPPLIES_TO]-(:Company)
             WITH c, directorCount, max(s.dependencyPct) AS maxSupplyDependency
             OPTIONAL MATCH (i:Institution)-[:HOLDS_STAKE_IN]->(c)
             RETURN c.id AS id, c.name AS name, c.ticker AS ticker, c.sector AS sector,
