@@ -32,8 +32,6 @@
               [attr.y2]="edge.y2"
               [attr.stroke]="edge.color"
               class="edge-line"
-              [class.edge-dimmed]="hoveredNodeId && hoveredNodeId !== edge.id.replace('edge-', '')"
-              [class.edge-highlighted]="hoveredNodeId === edge.id.replace('edge-', '')"
             />
           }
         </g>
@@ -44,18 +42,7 @@
             <g
               class="node-group"
               [attr.transform]="'translate(' + node.x + ',' + node.y + ')'"
-              [class.node-dimmed]="hoveredNodeId && hoveredNodeId !== node.id"
-              [class.node-highlighted]="hoveredNodeId === node.id"
-              (mouseenter)="onNodeHover(node.id)"
-              (mouseleave)="onNodeHover(null)"
             >
-              <!-- Node Glow on Hover -->
-              <circle
-                r="26"
-                class="node-glow"
-                [attr.fill]="node.color"
-              />
-
               <!-- Node Circle -->
               <circle
                 r="20"
@@ -74,7 +61,7 @@
 
               <!-- Node Text Label Below -->
               <text
-                dy="34"
+                dy="38"
                 text-anchor="middle"
                 class="node-label"
               >

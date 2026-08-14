@@ -44,34 +44,13 @@
 .edge-line {
   stroke-width: 2;
   stroke-opacity: 0.6;
-  transition: all v.$transition-fast;
-
-  &.edge-highlighted {
-    stroke-width: 3.5;
-    stroke-opacity: 1;
-    filter: drop-shadow(0 0 6px currentColor);
-  }
-
-  &.edge-dimmed {
-    stroke-opacity: 0.15;
-  }
 }
 
 // Outer Nodes
 .node-group {
-  cursor: pointer;
-  transition: transform v.$transition-fast, opacity v.$transition-fast;
-
-  .node-glow {
-    opacity: 0;
-    filter: blur(8px);
-    transition: opacity v.$transition-fast;
-  }
-
   .node-circle {
     fill: v.$bg-surface-elevated;
     stroke-width: 2.5;
-    transition: all v.$transition-fast;
   }
 
   .node-initial {
@@ -88,29 +67,11 @@
     font-weight: 500;
     letter-spacing: -0.01em;
     pointer-events: none;
-    transition: fill v.$transition-fast;
-  }
-
-  &:hover,
-  &.node-highlighted {
-    .node-glow {
-      opacity: 0.35;
-    }
-
-    .node-circle {
-      fill: v.$bg-surface-hover;
-      transform: scale(1.12);
-      transform-origin: center;
-    }
-
-    .node-label {
-      fill: v.$text-primary;
-      font-weight: 600;
-    }
-  }
-
-  &.node-dimmed {
-    opacity: 0.3;
+    paint-order: stroke fill;
+    stroke: v.$bg-surface;
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
   }
 }
 
@@ -143,6 +104,11 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     pointer-events: none;
+    paint-order: stroke fill;
+    stroke: v.$bg-surface;
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
   }
 }
 

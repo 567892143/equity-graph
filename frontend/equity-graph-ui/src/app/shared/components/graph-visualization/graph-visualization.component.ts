@@ -58,9 +58,12 @@ export class GraphVisualizationComponent implements OnChanges {
   readonly cy = 250;
   readonly radius = 160;
 
+  // Visual radii for edge-clipping offsets
+  readonly centerEdgeOffset = 32; // Center circle r=30 + 2px clearance
+  readonly nodeEdgeOffset = 22;   // Node circle r=20 + 2px clearance
+
   renderedNodes: RenderedNode[] = [];
   renderedEdges: RenderedEdge[] = [];
-  hoveredNodeId: string | null = null;
 
   ngOnChanges(changes: SimpleChanges): void {
     this.computeLayout();
@@ -74,8 +77,10 @@ export class GraphVisualizationComponent implements OnChanges {
     }
 
     const count = this.connections.length;
+    const nodes: RenderedNode[] = [];
+    const edges: RenderedEdge[] = [];
 
-    this.renderedNodes = this.connections.map((conn, index) => {
+    this.connections.forEach((conn, index) => {
       let angle: number;
 
       // Special branch for low connection counts to avoid degenerate straight lines
@@ -92,11 +97,15 @@ export class GraphVisualizationComponent implements OnChanges {
         angle = index * angleStep - Math.PI / 2;
       }
 
-      const x = this.cx + this.radius * Math.cos(angle);
-      const y = this.cy + this.radius * Math.sin(angle);
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+
+      // Node center coordinates
+      const x = this.cx + this.radius * cosA;
+      const y = this.cy + this.radius * sinA;
       const color = this.getColorForRelationship(conn.relationshipType);
 
-      return {
+      nodes.push({
         id: conn.id,
         name: conn.name,
         label: conn.label,
@@ -105,18 +114,29 @@ export class GraphVisualizationComponent implements OnChanges {
         y,
         color,
         shortName: this.truncateName(conn.name, 20)
-      };
+      });
+
+      // Edge endpoints: clipped precisely at the circle perimeters
+      // x1, y1 starts just outside the center circle (r=30)
+      // x2, y2 ends just outside the outer node circle (r=20)
+      const x1 = this.cx + this.centerEdgeOffset * cosA;
+      const y1 = this.cy + this.centerEdgeOffset * sinA;
+      const x2 = x - this.nodeEdgeOffset * cosA;
+      const y2 = y - this.nodeEdgeOffset * sinA;
+
+      edges.push({
+        id: `edge-${conn.id}`,
+        x1,
+        y1,
+        x2,
+        y2,
+        color,
+        relationshipType: conn.relationshipType
+      });
     });
 
-    this.renderedEdges = this.renderedNodes.map((node) => ({
-      id: `edge-${node.id}`,
-      x1: this.cx,
-      y1: this.cy,
-      x2: node.x,
-      y2: node.y,
-      color: node.color,
-      relationshipType: node.relationshipType
-    }));
+    this.renderedNodes = nodes;
+    this.renderedEdges = edges;
   }
 
   getColorForRelationship(relationshipType: string): string {
@@ -139,9 +159,5 @@ export class GraphVisualizationComponent implements OnChanges {
   truncateName(name: string, maxLength: number = 20): string {
     if (!name) return '';
     return name.length > maxLength ? name.substring(0, maxLength - 1) + '…' : name;
-  }
-
-  onNodeHover(nodeId: string | null): void {
-    this.hoveredNodeId = nodeId;
   }
 }

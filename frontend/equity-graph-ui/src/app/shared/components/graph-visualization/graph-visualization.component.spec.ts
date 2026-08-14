@@ -19,7 +19,7 @@ describe('GraphVisualizationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should layout 1 node directly at top center', () => {
+  it('should layout 1 node directly at top center with trimmed edge endpoints', () => {
     component.centerNode = { id: 'c1', name: 'Center', label: 'Company' };
     component.connections = [
       { id: 'n1', name: 'Node 1', label: 'Person', relationshipType: 'DIRECTOR_OF' }
@@ -29,6 +29,16 @@ describe('GraphVisualizationComponent', () => {
     expect(component.renderedNodes.length).toBe(1);
     expect(component.renderedNodes[0].x).toBeCloseTo(320, 1);
     expect(component.renderedNodes[0].y).toBeCloseTo(250 - 160, 1); // y = 90
+
+    // Check trimmed edge endpoints
+    expect(component.renderedEdges.length).toBe(1);
+    const edge = component.renderedEdges[0];
+    // x1 = 320, y1 = 250 - 32 = 218 (stops outside center circle r=30)
+    expect(edge.x1).toBeCloseTo(320, 1);
+    expect(edge.y1).toBeCloseTo(218, 1);
+    // x2 = 320, y2 = 90 + 22 = 112 (stops outside outer circle r=20)
+    expect(edge.x2).toBeCloseTo(320, 1);
+    expect(edge.y2).toBeCloseTo(112, 1);
   });
 
   it('should layout 2 nodes in an upward V-spread rather than vertical straight line', () => {
