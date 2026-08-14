@@ -1,1 +1,20 @@
-<p>empty-state works!</p>
+<div class="empty-state-card">
+  <div class="icon-wrapper">
+    @if (icon) {
+      <span class="custom-icon">{{ icon }}</span>
+    } @else {
+      <!-- Reassuring neutral graph/lens SVG icon -->
+      <svg class="default-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 8v4"></path>
+        <path d="M12 16h.01"></path>
+        <circle cx="12" cy="12" r="3" stroke-dasharray="2 2"></circle>
+      </svg>
+    }
+  </div>
+
+  <h3 class="title">{{ title }}</h3>
+  <p class="message">{{ message }}</p>
+
+  <ng-content></ng-content>
+</div>

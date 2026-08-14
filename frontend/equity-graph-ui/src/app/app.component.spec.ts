@@ -6,7 +6,9 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
-      providers: [provideRouter([])]
+      providers: [
+        provideRouter([])
+      ]
     }).compileComponents();
   });
 
@@ -16,9 +18,19 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'equity-graph-ui' title`, () => {
+  it(`should have the 'EquityGraph' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('equity-graph-ui');
+    expect(app.title).toEqual('EquityGraph');
+  });
+
+  it('should open and close the info modal', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.isInfoModalOpen()).toBeFalse();
+    app.openInfoModal();
+    expect(app.isInfoModalOpen()).toBeTrue();
+    app.closeInfoModal();
+    expect(app.isInfoModalOpen()).toBeFalse();
   });
 });

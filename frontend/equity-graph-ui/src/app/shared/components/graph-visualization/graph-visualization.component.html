@@ -1,1 +1,145 @@
-<p>graph-visualization works!</p>
+<div class="graph-card">
+  @if (centerNode) {
+    <div class="graph-canvas-wrapper">
+      <svg
+        class="graph-svg"
+        [attr.viewBox]="'0 0 ' + width + ' ' + height"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        [attr.aria-label]="'Graph visualization for ' + centerNode.name"
+      >
+        <!-- Background Decorative Orbits -->
+        <circle
+          [attr.cx]="cx"
+          [attr.cy]="cy"
+          [attr.r]="radius"
+          class="orbit-ring"
+        />
+        <circle
+          [attr.cx]="cx"
+          [attr.cy]="cy"
+          [attr.r]="radius * 0.5"
+          class="orbit-ring subtle"
+        />
+
+        <!-- Connection Edge Lines -->
+        <g class="edges-layer">
+          @for (edge of renderedEdges; track edge.id) {
+            <line
+              [attr.x1]="edge.x1"
+              [attr.y1]="edge.y1"
+              [attr.x2]="edge.x2"
+              [attr.y2]="edge.y2"
+              [attr.stroke]="edge.color"
+              class="edge-line"
+              [class.edge-dimmed]="hoveredNodeId && hoveredNodeId !== edge.id.replace('edge-', '')"
+              [class.edge-highlighted]="hoveredNodeId === edge.id.replace('edge-', '')"
+            />
+          }
+        </g>
+
+        <!-- Outer Connected Nodes -->
+        <g class="nodes-layer">
+          @for (node of renderedNodes; track node.id) {
+            <g
+              class="node-group"
+              [attr.transform]="'translate(' + node.x + ',' + node.y + ')'"
+              [class.node-dimmed]="hoveredNodeId && hoveredNodeId !== node.id"
+              [class.node-highlighted]="hoveredNodeId === node.id"
+              (mouseenter)="onNodeHover(node.id)"
+              (mouseleave)="onNodeHover(null)"
+            >
+              <!-- Node Glow on Hover -->
+              <circle
+                r="26"
+                class="node-glow"
+                [attr.fill]="node.color"
+              />
+
+              <!-- Node Circle -->
+              <circle
+                r="20"
+                class="node-circle"
+                [attr.stroke]="node.color"
+              />
+
+              <!-- Node Icon/Letter -->
+              <text
+                dy="4"
+                text-anchor="middle"
+                class="node-initial"
+              >
+                {{ node.name.charAt(0) }}
+              </text>
+
+              <!-- Node Text Label Below -->
+              <text
+                dy="34"
+                text-anchor="middle"
+                class="node-label"
+              >
+                {{ node.shortName }}
+              </text>
+
+              <title>{{ node.name }} ({{ node.relationshipType }})</title>
+            </g>
+          }
+        </g>
+
+        <!-- Center Node (Focus) -->
+        <g
+          class="center-node-group"
+          [attr.transform]="'translate(' + cx + ',' + cy + ')'"
+        >
+          <!-- Center Ambient Pulse Ring -->
+          <circle
+            r="38"
+            class="center-pulse-ring"
+          />
+
+          <!-- Center Node Body -->
+          <circle
+            r="30"
+            class="center-node-circle"
+          />
+
+          <!-- Center Node Label / Icon -->
+          <text
+            dy="5"
+            text-anchor="middle"
+            class="center-node-initial"
+          >
+            {{ centerNode.name.charAt(0) }}
+          </text>
+
+          <!-- Center Title -->
+          <text
+            dy="48"
+            text-anchor="middle"
+            class="center-node-title"
+          >
+            {{ truncateName(centerNode.name, 18) }}
+          </text>
+
+          <title>{{ centerNode.name }} ({{ centerNode.label }})</title>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Graph Legend -->
+    @if (legend && legend.length > 0) {
+      <div class="graph-legend">
+        @for (item of legend; track item.label) {
+          <div class="legend-item">
+            <span class="legend-dot" [style.background-color]="item.color"></span>
+            <span class="legend-label">{{ item.label }}</span>
+          </div>
+        }
+      </div>
+    }
+  } @else {
+    <div class="empty-graph-placeholder">
+      <p>No entity selected for graph visualization.</p>
+    </div>
+  }
+</div>

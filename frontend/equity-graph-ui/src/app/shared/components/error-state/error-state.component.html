@@ -1,1 +1,22 @@
-<p>error-state works!</p>
+<div class="error-state-card">
+  <div class="icon-wrapper">
+    <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+  </div>
+
+  <h3 class="title">Unable to Load Data</h3>
+  <p class="message">{{ message }}</p>
+
+  @if (showRetry) {
+    <button type="button" class="retry-button" (click)="onRetryClick()">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"></polyline>
+        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+      </svg>
+      <span>Try Again</span>
+    </button>
+  }
+</div>

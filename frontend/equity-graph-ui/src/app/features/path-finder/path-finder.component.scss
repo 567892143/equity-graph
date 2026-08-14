@@ -1,0 +1,407 @@
+@use '../../shared/variables' as v;
+
+.path-finder-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: v.$bg-canvas;
+}
+
+// Main Content
+.main-content {
+  flex: 1;
+  padding: 40px 24px 64px;
+
+  .content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+// Hero Intro
+.finder-hero {
+  text-align: center;
+  margin-bottom: 32px;
+
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: v.$text-primary;
+    margin-bottom: 10px;
+
+    @media (max-width: 640px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    color: v.$text-secondary;
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}
+
+// Query Card
+.query-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-xl;
+  padding: 28px;
+  box-shadow: v.$shadow-md;
+  margin-bottom: 32px;
+}
+
+.inputs-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.selector-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .field-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: v.$text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+
+.autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    color: v.$text-muted;
+    pointer-events: none;
+  }
+
+  .autocomplete-input {
+    width: 100%;
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-medium;
+    border-radius: v.$radius-md;
+    padding: 11px 14px 11px 38px;
+    color: v.$text-primary;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color v.$transition-fast, box-shadow v.$transition-fast;
+
+    &:focus {
+      border-color: v.$accent-primary;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    &::placeholder {
+      color: v.$text-muted;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.dropdown-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: v.$bg-surface-elevated;
+  border: 1px solid v.$border-medium;
+  border-radius: v.$radius-md;
+  box-shadow: v.$shadow-lg;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 50;
+
+  .dropdown-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid v.$border-subtle;
+    transition: background-color v.$transition-fast;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: v.$bg-surface-hover;
+    }
+
+    .option-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .option-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: v.$text-primary;
+    }
+
+    .option-sector {
+      font-size: 0.725rem;
+      color: v.$text-muted;
+    }
+
+    .option-ticker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: v.$accent-primary;
+    }
+  }
+}
+
+.selected-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$border-subtle;
+  background-color: v.$bg-surface-elevated;
+
+  .pill-badge {
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: v.$radius-xs;
+  }
+
+  .pill-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .pill-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pill-ticker {
+    font-size: 0.725rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: v.$text-muted;
+  }
+
+  .clear-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: v.$radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$text-muted;
+    transition: all v.$transition-fast;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: v.$text-primary;
+    }
+  }
+
+  &.origin {
+    border-color: v.$accent-border;
+    background-color: rgba(59, 130, 246, 0.08);
+    .pill-badge {
+      background-color: v.$accent-subtle;
+      color: v.$accent-primary;
+    }
+  }
+
+  &.destination {
+    border-color: rgba(16, 185, 129, 0.35);
+    background-color: rgba(16, 185, 129, 0.08);
+    .pill-badge {
+      background-color: v.$color-low-bg;
+      color: v.$color-low;
+    }
+  }
+}
+
+.swap-action-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+    margin: -4px 0;
+  }
+
+  .swap-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: v.$radius-full;
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$text-secondary;
+    transition: all v.$transition-fast;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: v.$accent-subtle;
+      border-color: v.$accent-border;
+      color: v.$accent-primary;
+      transform: rotate(180deg);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.query-actions {
+  display: flex;
+  justify-content: center;
+
+  .find-path-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: v.$accent-primary;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: v.$radius-md;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    transition: all v.$transition-fast;
+    min-width: 200px;
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: v.$accent-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+// Results Section
+.results-section {
+  width: 100%;
+}
+
+.result-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-xl;
+  padding: 24px;
+  box-shadow: v.$shadow-md;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid v.$border-subtle;
+  margin-bottom: 16px;
+
+  .degrees-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: v.$accent-subtle;
+    border: 1px solid v.$accent-border;
+    padding: 6px 14px;
+    border-radius: v.$radius-full;
+
+    .degrees-count {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: v.$accent-primary;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .degrees-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: v.$text-primary;
+    }
+  }
+
+  .hops-count {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: v.$text-muted;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

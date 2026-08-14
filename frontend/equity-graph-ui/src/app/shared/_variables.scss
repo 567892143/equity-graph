@@ -1,0 +1,85 @@
+// EquityGraph Design System Variables
+// Theme: Dark Fintech (Deep Navy/Charcoal with Electric Blue Accents)
+
+// Background Surfaces
+$bg-canvas: #0B0F17;
+$bg-surface: #111827;
+$bg-surface-elevated: #1F2937;
+$bg-surface-subtle: #1E293B;
+$bg-surface-hover: #263345;
+$bg-modal-backdrop: rgba(11, 15, 23, 0.75);
+
+// Typography Colors
+$text-primary: #F9FAFB;
+$text-secondary: #9CA3AF;
+$text-muted: #6B7280;
+$text-inverse: #0B0F17;
+
+// Accent Colors (Electric Blue)
+$accent-primary: #3B82F6;
+$accent-hover: #2563EB;
+$accent-active: #1D4ED8;
+$accent-subtle: rgba(59, 130, 246, 0.12);
+$accent-border: rgba(59, 130, 246, 0.3);
+
+// Severity & Status Colors
+$color-low: #10B981;
+$color-low-bg: rgba(16, 185, 129, 0.12);
+$color-low-border: rgba(16, 185, 129, 0.25);
+
+$color-medium: #F59E0B;
+$color-medium-bg: rgba(245, 158, 11, 0.12);
+$color-medium-border: rgba(245, 158, 11, 0.25);
+
+$color-high: #EF4444;
+$color-high-bg: rgba(239, 68, 68, 0.12);
+$color-high-border: rgba(239, 68, 68, 0.25);
+
+$color-neutral: #94A3B8;
+$color-neutral-bg: rgba(148, 163, 184, 0.12);
+$color-neutral-border: rgba(148, 163, 184, 0.25);
+
+// Borders
+$border-subtle: rgba(255, 255, 255, 0.08);
+$border-medium: rgba(255, 255, 255, 0.14);
+$border-strong: rgba(255, 255, 255, 0.22);
+
+// Radii
+$radius-xs: 4px;
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 18px;
+$radius-full: 9999px;
+
+// Transitions & Animation
+$transition-fast: 0.15s ease-in-out;
+$transition-normal: 0.25s ease-in-out;
+$transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+$shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+$shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.6), 0 4px 8px -2px rgba(0, 0, 0, 0.3);
+$shadow-modal: 0 24px 48px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+// Shimmer Keyframes
+@keyframes shimmerPulse {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@mixin shimmer-loading {
+  background: linear-gradient(
+    90deg,
+    $bg-surface-elevated 25%,
+    #293548 37%,
+    $bg-surface-elevated 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmerPulse 1.8s infinite ease-in-out;
+}

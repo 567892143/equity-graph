@@ -1,0 +1,110 @@
+@use '../../variables' as v;
+
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  &[data-variant='card'] {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+}
+
+.skeleton-line,
+.skeleton-chip,
+.skeleton-avatar {
+  @include v.shimmer-loading;
+  border-radius: v.$radius-sm;
+}
+
+.skeleton-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-lg;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .skeleton-title {
+    height: 20px;
+    width: 60%;
+  }
+
+  .skeleton-subtitle {
+    height: 14px;
+    width: 35%;
+  }
+
+  .skeleton-grid {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+
+    .skeleton-chip {
+      height: 28px;
+      flex: 1;
+      border-radius: v.$radius-full;
+    }
+  }
+}
+
+.skeleton-list-item {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-md;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .skeleton-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: v.$radius-full;
+    flex-shrink: 0;
+  }
+
+  .skeleton-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+
+    .skeleton-title {
+      height: 16px;
+      width: 40%;
+    }
+
+    .skeleton-text {
+      height: 12px;
+      width: 75%;
+    }
+  }
+}
+
+.skeleton-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 0;
+
+  .skeleton-heading {
+    height: 22px;
+    width: 45%;
+    margin-bottom: 4px;
+  }
+
+  .skeleton-paragraph {
+    height: 14px;
+    width: 100%;
+  }
+
+  .skeleton-paragraph-short {
+    height: 14px;
+    width: 70%;
+  }
+}

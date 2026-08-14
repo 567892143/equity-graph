@@ -1,0 +1,100 @@
+@use '../../variables' as v;
+
+.stat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: v.$radius-full;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid v.$border-subtle;
+  background-color: v.$bg-surface-elevated;
+  color: v.$text-secondary;
+  transition: all v.$transition-fast;
+  user-select: none;
+
+  .chip-label {
+    color: v.$text-muted;
+    font-weight: 400;
+  }
+
+  .chip-value {
+    color: v.$text-primary;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .severity-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: v.$radius-full;
+    flex-shrink: 0;
+  }
+
+  .chevron-icon {
+    width: 13px;
+    height: 13px;
+    color: v.$text-muted;
+    margin-left: 2px;
+    transition: transform v.$transition-fast;
+  }
+
+  // Severity variations
+  &[data-severity='low'] {
+    border-color: v.$color-low-border;
+    background-color: v.$color-low-bg;
+    .severity-dot {
+      background-color: v.$color-low;
+    }
+  }
+
+  &[data-severity='medium'] {
+    border-color: v.$color-medium-border;
+    background-color: v.$color-medium-bg;
+    .severity-dot {
+      background-color: v.$color-medium;
+    }
+  }
+
+  &[data-severity='high'] {
+    border-color: v.$color-high-border;
+    background-color: v.$color-high-bg;
+    .severity-dot {
+      background-color: v.$color-high;
+    }
+  }
+
+  &[data-severity='neutral'] {
+    border-color: v.$accent-border;
+    background-color: v.$accent-subtle;
+    .severity-dot {
+      background-color: v.$accent-primary;
+    }
+  }
+
+  // Clickable state
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: v.$shadow-sm;
+      filter: brightness(1.1);
+
+      .chevron-icon {
+        transform: translateX(2px);
+        color: v.$text-primary;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$accent-primary;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

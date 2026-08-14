@@ -1,1 +1,29 @@
-<p>loading-skeleton works!</p>
+<div class="skeleton-container" [attr.data-variant]="variant">
+  @for (item of items; track $index) {
+    @if (variant === 'card') {
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-subtitle"></div>
+        <div class="skeleton-grid">
+          <div class="skeleton-chip"></div>
+          <div class="skeleton-chip"></div>
+          <div class="skeleton-chip"></div>
+        </div>
+      </div>
+    } @else if (variant === 'list') {
+      <div class="skeleton-list-item">
+        <div class="skeleton-avatar"></div>
+        <div class="skeleton-content">
+          <div class="skeleton-line skeleton-title"></div>
+          <div class="skeleton-line skeleton-text"></div>
+        </div>
+      </div>
+    } @else {
+      <div class="skeleton-text-group">
+        <div class="skeleton-line skeleton-heading"></div>
+        <div class="skeleton-line skeleton-paragraph"></div>
+        <div class="skeleton-line skeleton-paragraph-short"></div>
+      </div>
+    }
+  }
+</div>

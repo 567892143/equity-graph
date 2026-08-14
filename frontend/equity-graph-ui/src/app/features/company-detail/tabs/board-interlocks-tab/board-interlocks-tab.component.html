@@ -1,1 +1,72 @@
-<p>board-interlocks-tab works!</p>
+<div class="tab-content-container">
+  @if (isLoading()) {
+    <app-loading-skeleton variant="card" [count]="3"></app-loading-skeleton>
+  } @else if (errorMessage()) {
+    <app-error-state
+      [message]="errorMessage()!"
+      [showRetry]="true"
+      (retry)="fetchInterlocks()"
+    ></app-error-state>
+  } @else if (interlocks().length === 0) {
+    <app-empty-state
+      title="No Board Interlocks Found"
+      message="No shared board directors were identified between this company and other corporate entities in the network."
+    ></app-empty-state>
+  } @else {
+    <div class="tab-layout-grid">
+      <!-- Graph Network View -->
+      <div class="graph-section">
+        <h4 class="section-title">Director Overlap Graph</h4>
+        <app-graph-visualization
+          [centerNode]="centerNode"
+          [connections]="graphConnections"
+          [legend]="graphLegend"
+        ></app-graph-visualization>
+      </div>
+
+      <!-- Detail Interlock Cards List -->
+      <div class="list-section">
+        <div class="list-header">
+          <h4 class="section-title">Shared Director Connections</h4>
+          <span class="count-badge">{{ interlocks().length }} Interlocks</span>
+        </div>
+
+        <div class="cards-stack">
+          @for (item of interlocks(); track item.personId + '-' + item.otherCompanyId) {
+            <div class="interlock-card">
+              <div class="card-top">
+                <div class="person-info">
+                  <div class="avatar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 class="person-name">{{ item.personName }}</h5>
+                    <span class="since-label">Director since {{ item.since }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-bottom">
+                <span class="interlock-label">Also serves on board of:</span>
+                <button
+                  type="button"
+                  class="target-company-chip"
+                  (click)="onNavigateCompany(item.otherCompanyId)"
+                  title="View network of {{ item.otherCompanyName }}"
+                >
+                  <span>{{ item.otherCompanyName }}</span>
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

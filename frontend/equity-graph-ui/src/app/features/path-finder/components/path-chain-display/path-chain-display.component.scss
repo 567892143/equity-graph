@@ -1,0 +1,174 @@
+@use '../../../../shared/variables' as v;
+
+.chain-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 16px 4px 24px;
+  -webkit-overflow-scrolling: touch;
+
+  // Custom styled scrollbar
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: v.$bg-surface;
+    border-radius: v.$radius-full;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: v.$bg-surface-hover;
+    border-radius: v.$radius-full;
+  }
+}
+
+.chain-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 100%;
+  padding: 4px;
+}
+
+.node-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-lg;
+  padding: 14px 18px;
+  min-width: 200px;
+  max-width: 280px;
+  box-shadow: v.$shadow-sm;
+  transition: all v.$transition-fast;
+  position: relative;
+
+  &.start-node {
+    border-color: v.$accent-border;
+    background-color: rgba(59, 130, 246, 0.06);
+  }
+
+  &.end-node {
+    border-color: rgba(16, 185, 129, 0.35);
+    background-color: rgba(16, 185, 129, 0.06);
+  }
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-md;
+      border-color: v.$accent-primary;
+      background-color: v.$bg-surface-elevated;
+    }
+  }
+}
+
+.node-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: v.$radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.badge-company {
+    background-color: v.$accent-subtle;
+    border: 1px solid v.$accent-border;
+    color: v.$accent-primary;
+  }
+
+  &.badge-person {
+    background-color: v.$color-medium-bg;
+    border: 1px solid v.$color-medium-border;
+    color: v.$color-medium;
+  }
+
+  &.badge-institution {
+    background-color: v.$color-low-bg;
+    border: 1px solid v.$color-low-border;
+    color: v.$color-low;
+  }
+
+  &.badge-default {
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-medium;
+    color: v.$text-secondary;
+  }
+}
+
+.node-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+
+  .node-type-label {
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    &.badge-company { color: v.$accent-primary; }
+    &.badge-person { color: v.$color-medium; }
+    &.badge-institution { color: v.$color-low; }
+    &.badge-default { color: v.$text-muted; }
+  }
+
+  .node-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Edge Connectors
+.edge-connector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+
+  .edge-line-before,
+  .edge-line-after {
+    width: 14px;
+    height: 1.5px;
+    background-color: v.$border-medium;
+  }
+
+  .relationship-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-subtle;
+    padding: 4px 10px;
+    border-radius: v.$radius-full;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.725rem;
+    font-weight: 600;
+    color: v.$text-secondary;
+    white-space: nowrap;
+
+    .rel-text {
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .rel-arrow {
+      width: 12px;
+      height: 12px;
+      color: v.$accent-primary;
+    }
+  }
+}

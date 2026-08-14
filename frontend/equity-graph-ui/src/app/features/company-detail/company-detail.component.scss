@@ -1,0 +1,278 @@
+@use '../../shared/variables' as v;
+
+.detail-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: v.$bg-canvas;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: v.$text-secondary;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color v.$transition-fast;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      transition: transform v.$transition-fast;
+    }
+
+    &:hover {
+      color: v.$accent-primary;
+      svg {
+        transform: translateX(-3px);
+      }
+    }
+  }
+
+  .breadcrumb-separator {
+    color: v.$text-muted;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-current {
+    color: v.$text-primary;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Main Content
+.main-content {
+  flex: 1;
+  padding: 32px 24px 64px;
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .skeleton-gap {
+    height: 12px;
+  }
+}
+
+// 404 Card
+.not-found-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 56px 24px;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-xl;
+  max-width: 500px;
+  margin: 40px auto;
+
+  .not-found-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: v.$radius-full;
+    background-color: v.$bg-surface-elevated;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$color-medium;
+    margin-bottom: 18px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .not-found-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    margin-bottom: 8px;
+  }
+
+  .not-found-msg {
+    font-size: 0.9rem;
+    color: v.$text-secondary;
+    margin-bottom: 24px;
+    max-width: 360px;
+    line-height: 1.5;
+  }
+
+  .back-home-btn {
+    background-color: v.$accent-primary;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: v.$radius-md;
+    transition: background-color v.$transition-fast;
+
+    &:hover {
+      background-color: v.$accent-hover;
+    }
+  }
+}
+
+// Company Hero Card
+.company-hero-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-xl;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: v.$shadow-md;
+}
+
+.hero-main-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid v.$border-subtle;
+}
+
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  .company-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: v.$text-primary;
+    margin: 0;
+
+    @media (max-width: 640px) {
+      font-size: 1.35rem;
+    }
+  }
+
+  .ticker-badge {
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-subtle;
+    padding: 4px 10px;
+    border-radius: v.$radius-xs;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: v.$accent-primary;
+  }
+
+  .sector-badge {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: v.$text-muted;
+    background-color: v.$accent-subtle;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    padding: 4px 10px;
+    border-radius: v.$radius-full;
+  }
+}
+
+.market-cap-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+
+  @media (max-width: 640px) {
+    align-items: flex-start;
+  }
+
+  .metric-label {
+    font-size: 0.725rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: v.$text-muted;
+  }
+
+  .market-cap-val {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: v.$text-primary;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+// Tab Navigation
+.tab-nav-bar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid v.$border-subtle;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+
+  .tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: v.$text-secondary;
+    border-bottom: 2px solid transparent;
+    transition: all v.$transition-fast;
+    white-space: nowrap;
+
+    .tab-icon {
+      width: 16px;
+      height: 16px;
+      color: v.$text-muted;
+      transition: color v.$transition-fast;
+    }
+
+    &:hover {
+      color: v.$text-primary;
+
+      .tab-icon {
+        color: v.$text-primary;
+      }
+    }
+
+    &.active {
+      color: v.$accent-primary;
+      border-bottom-color: v.$accent-primary;
+      font-weight: 600;
+
+      .tab-icon {
+        color: v.$accent-primary;
+      }
+    }
+  }
+}
+
+.tab-panes-wrapper {
+  min-height: 400px;
+}

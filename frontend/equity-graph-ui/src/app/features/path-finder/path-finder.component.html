@@ -1,1 +1,221 @@
-<p>path-finder works!</p>
+<div class="path-finder-layout">
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-container">
+      <!-- Hero Intro -->
+      <section class="finder-hero">
+        <h1 class="hero-title">Network Path Finder</h1>
+        <p class="hero-subtitle">
+          Trace shortest multi-hop relationships between any two companies across directorships, supply chain exposures, and institutional ownership stakes.
+        </p>
+      </section>
+
+      <!-- Selection & Query Card -->
+      <section class="query-card">
+        <div class="inputs-row">
+          <!-- From Company Selector -->
+          <div class="selector-field">
+            <label class="field-label">Origin Company</label>
+            <div class="autocomplete-wrapper">
+              @if (fromCompany()) {
+                <div class="selected-pill origin">
+                  <span class="pill-badge">From</span>
+                  <div class="pill-info">
+                    <span class="pill-name">{{ fromCompany()!.name }}</span>
+                    <span class="pill-ticker">{{ fromCompany()!.ticker }}</span>
+                  </div>
+                  <button type="button" class="clear-btn" (click)="clearFromCompany()" aria-label="Clear origin company">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
+              } @else {
+                <div class="input-wrapper">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input
+                    type="text"
+                    class="autocomplete-input"
+                    placeholder="Search origin company (e.g., TCS)..."
+                    [ngModel]="fromSearchTerm()"
+                    (ngModelChange)="onFromSearchInput($event)"
+                    (focus)="isFromDropdownOpen.set(true)"
+                  />
+                </div>
+                @if (isFromDropdownOpen() && fromSearchResults().length > 0) {
+                  <div class="dropdown-list">
+                    @for (company of fromSearchResults(); track company.id) {
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        (click)="selectFromCompany(company)"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">{{ company.name }}</span>
+                          <span class="option-sector">{{ company.sector }}</span>
+                        </div>
+                        <span class="option-ticker">{{ company.ticker }}</span>
+                      </button>
+                    }
+                  </div>
+                }
+              }
+            </div>
+          </div>
+
+          <!-- Swap Action Button -->
+          <div class="swap-action-wrapper">
+            <button
+              type="button"
+              class="swap-btn"
+              (click)="swapCompanies()"
+              title="Swap origin and destination companies"
+              [disabled]="!fromCompany() && !toCompany()"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 3 21 3 21 8"></polyline>
+                <line x1="4" y1="20" x2="21" y2="3"></line>
+                <polyline points="8 21 3 21 3 16"></polyline>
+                <line x1="15" y1="15" x2="21" y2="21"></line>
+                <line x1="4" y1="4" x2="9" y2="9"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- To Company Selector -->
+          <div class="selector-field">
+            <label class="field-label">Destination Company</label>
+            <div class="autocomplete-wrapper">
+              @if (toCompany()) {
+                <div class="selected-pill destination">
+                  <span class="pill-badge">To</span>
+                  <div class="pill-info">
+                    <span class="pill-name">{{ toCompany()!.name }}</span>
+                    <span class="pill-ticker">{{ toCompany()!.ticker }}</span>
+                  </div>
+                  <button type="button" class="clear-btn" (click)="clearToCompany()" aria-label="Clear destination company">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
+              } @else {
+                <div class="input-wrapper">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input
+                    type="text"
+                    class="autocomplete-input"
+                    placeholder="Search destination company (e.g., Tata Motors)..."
+                    [ngModel]="toSearchTerm()"
+                    (ngModelChange)="onToSearchInput($event)"
+                    (focus)="isToDropdownOpen.set(true)"
+                  />
+                </div>
+                @if (isToDropdownOpen() && toSearchResults().length > 0) {
+                  <div class="dropdown-list">
+                    @for (company of toSearchResults(); track company.id) {
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        (click)="selectToCompany(company)"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">{{ company.name }}</span>
+                          <span class="option-sector">{{ company.sector }}</span>
+                        </div>
+                        <span class="option-ticker">{{ company.ticker }}</span>
+                      </button>
+                    }
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Submit Bar -->
+        <div class="query-actions">
+          <button
+            type="button"
+            class="find-path-btn"
+            [disabled]="!fromCompany() || !toCompany() || isLoading()"
+            (click)="findConnection()"
+          >
+            @if (isLoading()) {
+              <span class="spinner"></span>
+              <span>Searching Network Graph...</span>
+            } @else {
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Find Connection</span>
+            }
+          </button>
+        </div>
+      </section>
+
+      <!-- Results Area -->
+      <section class="results-section">
+        <!-- Initial Guidance Prompt -->
+        @if (!pathResult() && !isLoading() && !noPathFound() && !errorMessage()) {
+          <app-empty-state
+            title="Discover Graph Connections"
+            message="Select an origin and destination company above and click 'Find Connection' to trace the shortest path connecting them."
+          ></app-empty-state>
+        }
+
+        <!-- Loading Skeleton -->
+        @if (isLoading()) {
+          <div class="result-card">
+            <app-loading-skeleton variant="list" [count]="2"></app-loading-skeleton>
+          </div>
+        }
+
+        <!-- Expected 404 No Path Found State -->
+        @if (noPathFound()) {
+          <app-empty-state
+            title="No Connection Found"
+            [message]="'No relationship path connects ' + fromCompany()?.name + ' and ' + toCompany()?.name + ' across directors, supply chains, or institutional holdings.'"
+          ></app-empty-state>
+        }
+
+        <!-- Real Technical Error State -->
+        @if (errorMessage()) {
+          <app-error-state
+            [message]="errorMessage()!"
+            [showRetry]="true"
+            (retry)="findConnection()"
+          ></app-error-state>
+        }
+
+        <!-- Success Result -->
+        @if (pathResult()) {
+          <div class="result-card">
+            <div class="result-header">
+              <div class="degrees-badge">
+                <span class="degrees-count">{{ pathResult()!.hops }}</span>
+                <span class="degrees-label">{{ pathResult()!.hops === 1 ? 'Degree of Separation' : 'Degrees of Separation' }}</span>
+              </div>
+              <span class="hops-count">{{ pathResult()!.nodes.length }} Graph Nodes</span>
+            </div>
+
+            <!-- Horizontal Chain Display Component -->
+            <app-path-chain-display
+              [nodes]="pathResult()!.nodes"
+              [relationshipTypes]="pathResult()!.relationshipTypes"
+            ></app-path-chain-display>
+          </div>
+        }
+      </section>
+    </div>
+  </main>
+</div>

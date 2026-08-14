@@ -1,1 +1,35 @@
-<p>company-card works!</p>
+<div
+  class="company-card"
+  role="button"
+  tabindex="0"
+  [attr.aria-label]="company.name + ', ' + company.ticker + ', ' + company.sector"
+  (click)="onCardClick()"
+  (keydown.enter)="onCardClick()"
+  (keydown.space)="onCardClick()"
+>
+  <div class="card-header">
+    <div class="ticker-badge">
+      <span class="ticker-text">{{ company.ticker }}</span>
+    </div>
+    <span class="sector-badge">{{ company.sector }}</span>
+  </div>
+
+  <div class="card-body">
+    <h3 class="company-name" [title]="company.name">{{ company.name }}</h3>
+  </div>
+
+  <div class="card-footer">
+    <div class="market-cap-wrapper">
+      <span class="market-cap-label">Market Cap</span>
+      <span class="market-cap-value">{{ company.marketCap | marketCapFormat }}</span>
+    </div>
+
+    <div class="card-action">
+      <span class="action-text">View Network</span>
+      <svg class="action-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="8" x2="13" y2="8"></line>
+        <polyline points="9 4 13 8 9 12"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>

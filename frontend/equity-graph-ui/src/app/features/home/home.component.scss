@@ -1,0 +1,199 @@
+@use '../../shared/variables' as v;
+
+.home-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: v.$bg-canvas;
+}
+
+// Hero Section
+.hero-section {
+  padding: 48px 24px 28px;
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 65%);
+  border-bottom: 1px solid v.$border-subtle;
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: v.$text-primary;
+    margin-bottom: 12px;
+
+    @media (max-width: 640px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 0.975rem;
+    color: v.$text-secondary;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 620px;
+  }
+}
+
+// Search Box
+.search-box-wrapper {
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-medium;
+  border-radius: v.$radius-lg;
+  padding: 10px 16px;
+  box-shadow: v.$shadow-md;
+  transition: border-color v.$transition-fast, box-shadow v.$transition-fast;
+
+  &:focus-within {
+    border-color: v.$accent-primary;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18), v.$shadow-md;
+  }
+
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    color: v.$text-muted;
+    flex-shrink: 0;
+  }
+
+  .search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: v.$text-primary;
+    font-size: 0.95rem;
+    font-family: inherit;
+
+    &::placeholder {
+      color: v.$text-muted;
+      font-size: 0.9rem;
+    }
+  }
+
+  .clear-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: v.$radius-full;
+    color: v.$text-muted;
+    transition: all v.$transition-fast;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      background-color: v.$bg-surface-elevated;
+      color: v.$text-primary;
+    }
+  }
+}
+
+// Sector Filter
+.sector-filter-container {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.sector-scroll-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 4px;
+
+  @media (max-width: 640px) {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+}
+
+.sector-chip {
+  padding: 6px 14px;
+  border-radius: v.$radius-full;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  color: v.$text-secondary;
+  white-space: nowrap;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    background-color: v.$bg-surface-elevated;
+    color: v.$text-primary;
+    border-color: v.$border-medium;
+  }
+
+  &.active {
+    background-color: v.$accent-primary;
+    border-color: v.$accent-primary;
+    color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  }
+}
+
+// Main Content Section
+.content-section {
+  flex: 1;
+  padding: 36px 24px 64px;
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid v.$border-subtle;
+
+  .results-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    letter-spacing: -0.01em;
+  }
+
+  .results-count {
+    font-size: 0.8125rem;
+    color: v.$text-muted;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+// Company Grid
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}

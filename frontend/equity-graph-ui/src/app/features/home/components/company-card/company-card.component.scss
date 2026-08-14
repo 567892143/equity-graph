@@ -1,0 +1,141 @@
+@use '../../../../shared/variables' as v;
+
+.company-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-lg;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast, border-color v.$transition-fast, background-color v.$transition-fast;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    background-color: v.$bg-surface-elevated;
+    border-color: v.$accent-border;
+    box-shadow: v.$shadow-lg;
+
+    .action-arrow {
+      transform: translateX(4px);
+      color: v.$accent-primary;
+    }
+
+    .action-text {
+      color: v.$accent-primary;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$accent-primary;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.ticker-badge {
+  background-color: v.$bg-surface-elevated;
+  border: 1px solid v.$border-subtle;
+  padding: 3px 8px;
+  border-radius: v.$radius-xs;
+
+  .ticker-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: v.$accent-primary;
+    letter-spacing: 0.02em;
+  }
+}
+
+.sector-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: v.$text-muted;
+  background-color: v.$accent-subtle;
+  padding: 3px 8px;
+  border-radius: v.$radius-full;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  white-space: nowrap;
+}
+
+.card-body {
+  margin-bottom: 18px;
+  flex: 1;
+
+  .company-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid v.$border-subtle;
+}
+
+.market-cap-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  .market-cap-label {
+    font-size: 0.7rem;
+    color: v.$text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .market-cap-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.card-action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .action-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: v.$text-muted;
+    transition: color v.$transition-fast;
+  }
+
+  .action-arrow {
+    width: 14px;
+    height: 14px;
+    color: v.$text-muted;
+    transition: transform v.$transition-fast, color v.$transition-fast;
+  }
+}

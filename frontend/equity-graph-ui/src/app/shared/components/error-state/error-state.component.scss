@@ -1,0 +1,77 @@
+@use '../../variables' as v;
+
+.error-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  background-color: v.$bg-surface;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: v.$radius-lg;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: v.$radius-full;
+  background-color: v.$color-high-bg;
+  border: 1px solid v.$color-high-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  .error-icon {
+    width: 26px;
+    height: 26px;
+    color: v.$color-high;
+  }
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$text-primary;
+  margin-bottom: 8px;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: v.$text-secondary;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 360px;
+}
+
+.retry-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: v.$accent-primary;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: v.$radius-md;
+  transition: background-color v.$transition-fast, transform v.$transition-fast;
+
+  &:hover {
+    background-color: v.$accent-hover;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: v.$accent-active;
+    transform: translateY(0);
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

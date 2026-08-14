@@ -1,1 +1,124 @@
-<p>institutional-overlap-tab works!</p>
+<div class="tab-content-container">
+  <!-- Company Selector Bar -->
+  <div class="selector-card">
+    <div class="selector-header">
+      <div>
+        <h4 class="section-title">Institutional Shareholder Comparison</h4>
+        <p class="section-desc">Discover common institutional investors holding equity stakes in both companies.</p>
+      </div>
+    </div>
+
+    <div class="comparison-bar">
+      <!-- Entity A (Current) -->
+      <div class="entity-pill current">
+        <span class="entity-badge">Company A</span>
+        <span class="entity-name">{{ companyName }}</span>
+      </div>
+
+      <div class="versus-divider">vs</div>
+
+      <!-- Entity B Selector -->
+      <div class="entity-selector-wrapper">
+        @if (selectedCompany()) {
+          <div class="entity-pill selected">
+            <span class="entity-badge">Company B</span>
+            <span class="entity-name">{{ selectedCompany()!.name }} ({{ selectedCompany()!.ticker }})</span>
+            <button
+              type="button"
+              class="clear-btn"
+              (click)="onClearSelection()"
+              aria-label="Change compared company"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        } @else {
+          <div class="search-input-group">
+            <input
+              type="text"
+              class="company-input"
+              placeholder="Search target company to compare (e.g. Infosys, TCS)..."
+              [ngModel]="companySearchTerm()"
+              (ngModelChange)="onSearchInput($event)"
+              (focus)="isDropdownOpen.set(true)"
+            />
+            @if (isDropdownOpen() && searchResults().length > 0) {
+              <div class="dropdown-list">
+                @for (item of searchResults(); track item.id) {
+                  <button
+                    type="button"
+                    class="dropdown-item"
+                    (click)="onSelectCompany(item)"
+                  >
+                    <span class="item-name">{{ item.name }}</span>
+                    <span class="item-ticker">{{ item.ticker }}</span>
+                  </button>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- State Handling -->
+  @if (!selectedCompany()) {
+    <app-empty-state
+      title="Select a Company to Compare"
+      message="Choose a second company from the dropdown above to analyze shared institutional investment portfolios."
+    ></app-empty-state>
+  } @else if (isLoading()) {
+    <app-loading-skeleton variant="list" [count]="3"></app-loading-skeleton>
+  } @else if (errorMessage()) {
+    <app-error-state
+      [message]="errorMessage()!"
+      [showRetry]="true"
+      (retry)="fetchOverlap(selectedCompany()!.id)"
+    ></app-error-state>
+  } @else if (overlapEntries().length === 0) {
+    <app-empty-state
+      title="No Overlapping Institutions"
+      [message]="'No common institutional shareholders were found between ' + companyName + ' and ' + selectedCompany()!.name + '.'"
+    ></app-empty-state>
+  } @else {
+    <div class="comparison-results-card">
+      <div class="results-meta">
+        <span class="meta-title">{{ overlapEntries().length }} Shared Institutional Shareholders</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="overlap-table">
+          <thead>
+            <tr>
+              <th class="th-institution">Institutional Investor</th>
+              <th class="th-stake text-right">Stake in {{ companyName }}</th>
+              <th class="th-stake text-right">Stake in {{ selectedCompany()!.name }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (entry of overlapEntries(); track entry.institutionId) {
+              <tr>
+                <td class="td-institution">
+                  <div class="institution-name-group">
+                    <span class="institution-dot"></span>
+                    <span class="institution-name">{{ entry.institutionName }}</span>
+                  </div>
+                </td>
+                <td class="td-stake text-right">
+                  <span class="stake-pill primary">{{ entry.stakeInCompanyA }}%</span>
+                </td>
+                <td class="td-stake text-right">
+                  <span class="stake-pill secondary">{{ entry.stakeInCompanyB }}%</span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,55 @@
+@use '../../variables' as v;
+
+.empty-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-lg;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: v.$radius-full;
+  background-color: v.$bg-surface-elevated;
+  border: 1px solid v.$border-subtle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: v.$text-secondary;
+
+  .default-icon {
+    width: 28px;
+    height: 28px;
+    color: v.$text-muted;
+  }
+
+  .custom-icon {
+    font-size: 24px;
+  }
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$text-primary;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: v.$text-secondary;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 360px;
+}

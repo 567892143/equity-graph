@@ -1,1 +1,181 @@
-<p>company-detail works!</p>
+<div class="detail-layout">
+  <!-- Main Container -->
+  <main class="main-content">
+    <div class="content-container">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-nav">
+        <a routerLink="/" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Market Overview</span>
+        </a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ company()?.name || 'Company Profile' }}</span>
+      </nav>
+      <!-- Loading State -->
+      @if (isLoading()) {
+        <div class="loading-wrapper">
+          <app-loading-skeleton variant="text"></app-loading-skeleton>
+          <div class="skeleton-gap"></div>
+          <app-loading-skeleton variant="card" [count]="3"></app-loading-skeleton>
+        </div>
+      }
+
+      <!-- 404 Specific Not Found State -->
+      @else if (isNotFound()) {
+        <div class="not-found-card">
+          <div class="not-found-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h2 class="not-found-title">Company Not Found</h2>
+          <p class="not-found-msg">{{ errorMessage() }}</p>
+          <button type="button" class="back-home-btn" (click)="navigateHome()">
+            Return to Market Overview
+          </button>
+        </div>
+      }
+
+      <!-- Generic Error State -->
+      @else if (errorMessage()) {
+        <app-error-state
+          [message]="errorMessage()!"
+          [showRetry]="true"
+          (retry)="loadCompanyDetails(companyId())"
+        ></app-error-state>
+      }
+
+      <!-- Company Loaded Successfully -->
+      @else if (company()) {
+        <!-- Company Profile Hero Card -->
+        <section class="company-hero-card">
+          <div class="hero-main-info">
+            <div class="title-row">
+              <h1 class="company-name">{{ company()!.name }}</h1>
+              <span class="ticker-badge">{{ company()!.ticker }}</span>
+              <span class="sector-badge">{{ company()!.sector }}</span>
+            </div>
+
+            <div class="market-cap-block">
+              <span class="metric-label">Market Capitalization</span>
+              <span class="market-cap-val">{{ company()!.marketCap | marketCapFormat }}</span>
+            </div>
+          </div>
+
+          <!-- Stat Chips Metric Row -->
+          <div class="stats-row">
+            <app-stat-chip
+              label="Board Interlocks"
+              [value]="company()!.directorCount"
+              [severity]="getBoardInterlockSeverity(company()!.directorCount)"
+              [clickable]="true"
+              (chipClick)="setActiveTab('interlocks')"
+              title="Click to view shared board directors"
+            ></app-stat-chip>
+
+            <app-stat-chip
+              label="Max Supply Dependency"
+              [value]="company()!.maxSupplyDependencyPct + '%'"
+              [severity]="getSupplyDependencySeverity(company()!.maxSupplyDependencyPct)"
+              [clickable]="true"
+              (chipClick)="setActiveTab('supply')"
+              title="Click to view supply chain exposure"
+            ></app-stat-chip>
+
+            <app-stat-chip
+              label="Institutional Holders"
+              [value]="company()!.institutionCount"
+              [severity]="getInstitutionCountSeverity(company()!.institutionCount)"
+              [clickable]="true"
+              (chipClick)="setActiveTab('institutional')"
+              title="Click to view institutional overlap"
+            ></app-stat-chip>
+          </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav-bar" role="tablist">
+          <button
+            type="button"
+            role="tab"
+            class="tab-btn"
+            [class.active]="activeTab() === 'interlocks'"
+            [attr.aria-selected]="activeTab() === 'interlocks'"
+            (click)="setActiveTab('interlocks')"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Board Interlocks</span>
+          </button>
+
+          <button
+            type="button"
+            role="tab"
+            class="tab-btn"
+            [class.active]="activeTab() === 'supply'"
+            [attr.aria-selected]="activeTab() === 'supply'"
+            (click)="setActiveTab('supply')"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>Supply Chain</span>
+          </button>
+
+          <button
+            type="button"
+            role="tab"
+            class="tab-btn"
+            [class.active]="activeTab() === 'institutional'"
+            [attr.aria-selected]="activeTab() === 'institutional'"
+            (click)="setActiveTab('institutional')"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+              <path d="M12 18V6"></path>
+            </svg>
+            <span>Institutional Overlap</span>
+          </button>
+        </nav>
+
+        <!-- Tab Content Panes (with persistent state retention) -->
+        <div class="tab-panes-wrapper">
+          <div [hidden]="activeTab() !== 'interlocks'">
+            <app-board-interlocks-tab
+              [companyId]="company()!.id"
+              [companyName]="company()!.name"
+              [active]="activeTab() === 'interlocks'"
+            ></app-board-interlocks-tab>
+          </div>
+
+          <div [hidden]="activeTab() !== 'supply'">
+            <app-supply-chain-tab
+              [companyId]="company()!.id"
+              [companyName]="company()!.name"
+              [active]="activeTab() === 'supply'"
+            ></app-supply-chain-tab>
+          </div>
+
+          <div [hidden]="activeTab() !== 'institutional'">
+            <app-institutional-overlap-tab
+              [companyId]="company()!.id"
+              [companyName]="company()!.name"
+              [active]="activeTab() === 'institutional'"
+            ></app-institutional-overlap-tab>
+          </div>
+        </div>
+      }
+    </div>
+  </main>
+</div>

@@ -1,1 +1,112 @@
-<p>home works!</p>
+<div class="home-layout">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">Uncover Market Networks</h1>
+      <p class="hero-subtitle">
+        Explore hidden corporate relationships, director interlocks, multi-tier supply chain exposures, and institutional shareholder overlaps across the market graph.
+      </p>
+
+      <!-- Search Box -->
+      <div class="search-box-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search by company name or ticker (e.g., Tata, INFY, HDFC)..."
+            [ngModel]="searchTerm()"
+            (ngModelChange)="onSearchChange($event)"
+            aria-label="Search companies"
+          />
+          @if (searchTerm()) {
+            <button
+              type="button"
+              class="clear-search-btn"
+              (click)="onClearSearch()"
+              aria-label="Clear search"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Sector Filters -->
+      <div class="sector-filter-container">
+        <div class="sector-scroll-row">
+          <button
+            type="button"
+            class="sector-chip"
+            [class.active]="selectedSector() === null"
+            (click)="selectedSector.set(null); onSearchChange(searchTerm())"
+          >
+            All Sectors
+          </button>
+          @for (sector of sectors; track sector) {
+            <button
+              type="button"
+              class="sector-chip"
+              [class.active]="selectedSector() === sector"
+              (click)="toggleSector(sector)"
+            >
+              {{ sector }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content / Company Grid -->
+  <main class="content-section">
+    <div class="content-container">
+      <!-- Section Header -->
+      <div class="results-header">
+        <h2 class="results-heading">
+          @if (selectedSector()) {
+            <span>{{ selectedSector() }} Companies</span>
+          } @else if (searchTerm()) {
+            <span>Search Results for "{{ searchTerm() }}"</span>
+          } @else {
+            <span>Market Companies</span>
+          }
+        </h2>
+        @if (!isLoading() && !errorMessage()) {
+          <span class="results-count">{{ companies().length }} entities</span>
+        }
+      </div>
+
+      <!-- State Handling -->
+      @if (isLoading()) {
+        <app-loading-skeleton variant="card" [count]="6"></app-loading-skeleton>
+      } @else if (errorMessage()) {
+        <app-error-state
+          [message]="errorMessage()!"
+          [showRetry]="true"
+          (retry)="retry()"
+        ></app-error-state>
+      } @else if (companies().length === 0) {
+        <app-empty-state
+          title="No companies match your search"
+          message="Try adjusting your keywords or clearing the sector filter to explore other network nodes."
+        ></app-empty-state>
+      } @else {
+        <div class="company-grid">
+          @for (company of companies(); track company.id) {
+            <app-company-card
+              [company]="company"
+              (cardClick)="onCompanyClick($event)"
+            ></app-company-card>
+          }
+        </div>
+      }
+    </div>
+  </main>
+</div>

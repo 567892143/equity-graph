@@ -1,1 +1,85 @@
-<p>supply-chain-tab works!</p>
+<div class="tab-content-container">
+  <!-- Controls Bar -->
+  <div class="controls-bar">
+    <div class="control-label-group">
+      <h4 class="section-title">Upstream Dependency Exposure</h4>
+      <p class="section-desc">Analyze tier-1, tier-2, and multi-tier supplier dependencies feeding into this company.</p>
+    </div>
+
+    <!-- Hop Depth Selector -->
+    <div class="hop-depth-selector">
+      <span class="hop-label">Max Hops:</span>
+      <div class="hop-buttons-group">
+        @for (hop of availableHops; track hop) {
+          <button
+            type="button"
+            class="hop-btn"
+            [class.active]="selectedHops() === hop"
+            (click)="setHopDepth(hop)"
+          >
+            {{ hop }} {{ hop === 1 ? 'Hop' : 'Hops' }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- State Handling -->
+  @if (isLoading()) {
+    <app-loading-skeleton variant="list" [count]="3"></app-loading-skeleton>
+  } @else if (errorMessage()) {
+    <app-error-state
+      [message]="errorMessage()!"
+      [showRetry]="true"
+      (retry)="loadExposure(selectedHops())"
+    ></app-error-state>
+  } @else if (paths().length === 0) {
+    <app-empty-state
+      title="No Supply Chain Dependencies Found"
+      [message]="'No supplier dependencies were found within ' + selectedHops() + (selectedHops() === 1 ? ' hop.' : ' hops.')"
+    ></app-empty-state>
+  } @else {
+    <div class="paths-list">
+      <div class="paths-header">
+        <span class="paths-count">{{ paths().length }} Dependency {{ paths().length === 1 ? 'Path' : 'Paths' }} Identified</span>
+      </div>
+
+      @for (path of paths(); track $index) {
+        <div class="path-card">
+          <div class="path-header">
+            <span class="path-badge">{{ path.hops }} {{ path.hops === 1 ? 'Hop Dependency' : 'Hops Multi-Tier' }}</span>
+          </div>
+
+          <div class="chain-flow">
+            @for (node of path.nodes; track node.id; let idx = $index) {
+              <!-- Company Node -->
+              <div
+                class="chain-node"
+                [class.current-company]="node.id === companyId"
+                (click)="onNavigateCompany(node.id)"
+                [title]="node.id === companyId ? 'Current Focus Company' : 'Click to view ' + node.name"
+              >
+                <span class="node-bullet"></span>
+                <span class="node-name">{{ node.name }}</span>
+              </div>
+
+              <!-- Edge with Dependency Percentage -->
+              @if (idx < path.nodes.length - 1) {
+                <div class="chain-connector">
+                  <div class="dependency-badge" title="Dependency Percentage">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="13" y1="8" x2="3" y2="8"></line>
+                      <polyline points="7 4 3 8 7 12"></polyline>
+                    </svg>
+                    <span>{{ path.dependencyPercentages[idx] }}% dependency</span>
+                  </div>
+                  <div class="connector-line"></div>
+                </div>
+              }
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

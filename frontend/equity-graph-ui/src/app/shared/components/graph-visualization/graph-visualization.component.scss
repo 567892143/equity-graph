@@ -1,0 +1,201 @@
+@use '../../variables' as v;
+
+.graph-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-xl;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-shadow: v.$shadow-md;
+}
+
+.graph-canvas-wrapper {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  position: relative;
+}
+
+.graph-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: block;
+}
+
+// Orbits
+.orbit-ring {
+  fill: none;
+  stroke: v.$border-subtle;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+
+  &.subtle {
+    stroke-width: 1;
+    stroke-dasharray: 2 4;
+    opacity: 0.5;
+  }
+}
+
+// Edges
+.edge-line {
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+  transition: all v.$transition-fast;
+
+  &.edge-highlighted {
+    stroke-width: 3.5;
+    stroke-opacity: 1;
+    filter: drop-shadow(0 0 6px currentColor);
+  }
+
+  &.edge-dimmed {
+    stroke-opacity: 0.15;
+  }
+}
+
+// Outer Nodes
+.node-group {
+  cursor: pointer;
+  transition: transform v.$transition-fast, opacity v.$transition-fast;
+
+  .node-glow {
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity v.$transition-fast;
+  }
+
+  .node-circle {
+    fill: v.$bg-surface-elevated;
+    stroke-width: 2.5;
+    transition: all v.$transition-fast;
+  }
+
+  .node-initial {
+    fill: v.$text-primary;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: inherit;
+    pointer-events: none;
+  }
+
+  .node-label {
+    fill: v.$text-secondary;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    pointer-events: none;
+    transition: fill v.$transition-fast;
+  }
+
+  &:hover,
+  &.node-highlighted {
+    .node-glow {
+      opacity: 0.35;
+    }
+
+    .node-circle {
+      fill: v.$bg-surface-hover;
+      transform: scale(1.12);
+      transform-origin: center;
+    }
+
+    .node-label {
+      fill: v.$text-primary;
+      font-weight: 600;
+    }
+  }
+
+  &.node-dimmed {
+    opacity: 0.3;
+  }
+}
+
+// Center Node
+.center-node-group {
+  .center-pulse-ring {
+    fill: v.$accent-subtle;
+    stroke: v.$accent-border;
+    stroke-width: 1.5;
+    animation: centerPulse 3s infinite ease-in-out;
+  }
+
+  .center-node-circle {
+    fill: v.$accent-primary;
+    stroke: #FFFFFF;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+  }
+
+  .center-node-initial {
+    fill: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .center-node-title {
+    fill: v.$text-primary;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    pointer-events: none;
+  }
+}
+
+// Legend
+.graph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid v.$border-subtle;
+  width: 100%;
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8125rem;
+    color: v.$text-secondary;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: v.$radius-full;
+    flex-shrink: 0;
+  }
+
+  .legend-label {
+    font-weight: 500;
+  }
+}
+
+.empty-graph-placeholder {
+  padding: 40px 20px;
+  color: v.$text-muted;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@keyframes centerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}

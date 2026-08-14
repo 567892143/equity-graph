@@ -1,0 +1,146 @@
+@use '../../../../shared/variables' as v;
+
+.tab-content-container {
+  width: 100%;
+}
+
+.tab-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: v.$text-primary;
+  margin-bottom: 14px;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .count-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: v.$text-muted;
+    background-color: v.$bg-surface-elevated;
+    padding: 3px 8px;
+    border-radius: v.$radius-full;
+    border: 1px solid v.$border-subtle;
+  }
+}
+
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.interlock-card {
+  background-color: v.$bg-surface;
+  border: 1px solid v.$border-subtle;
+  border-radius: v.$radius-lg;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color v.$transition-fast, transform v.$transition-fast;
+
+  &:hover {
+    border-color: v.$accent-border;
+    transform: translateY(-1px);
+  }
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .avatar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: v.$radius-full;
+    background-color: v.$accent-subtle;
+    border: 1px solid v.$accent-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$accent-primary;
+    flex-shrink: 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .person-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: v.$text-primary;
+    margin: 0 0 2px 0;
+  }
+
+  .since-label {
+    font-size: 0.775rem;
+    color: v.$text-muted;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.card-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid v.$border-subtle;
+
+  .interlock-label {
+    font-size: 0.8rem;
+    color: v.$text-secondary;
+  }
+
+  .target-company-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: v.$bg-surface-elevated;
+    border: 1px solid v.$border-medium;
+    color: v.$accent-primary;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: v.$radius-md;
+    transition: all v.$transition-fast;
+
+    svg {
+      width: 13px;
+      height: 13px;
+      transition: transform v.$transition-fast;
+    }
+
+    &:hover {
+      background-color: v.$accent-subtle;
+      border-color: v.$accent-border;
+
+      svg {
+        transform: translateX(2px);
+      }
+    }
+  }
+}
